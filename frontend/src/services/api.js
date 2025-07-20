@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = "https://leaderboard-task-s4dj.onrender.com"
 
 export const getUsers = async () => {
   const response = await fetch(`${API_BASE_URL}/users`)
