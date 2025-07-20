@@ -39,15 +39,16 @@ function App() {
     }
   }
 
-  const initializeUsers = async () => {
-    try {
-      await fetch("http://localhost:2000/api/users/initialize", {
-        method: "POST",
-      })
-    } catch (error) {
-      console.error("Error initializing users:", error)
-    }
+ const initializeUsers = async () => {
+  try {
+    await fetch(`${API_BASE_URL}/users/initialize`, {
+      method: "POST",
+    });
+  } catch (error) {
+    console.error("Error initializing users:", error);
   }
+};
+
 
   const handleClaimPoints = async () => {
     if (!selectedUser) {
