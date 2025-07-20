@@ -4,6 +4,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import userRoutes from "./routes/users.js"
 import claimRoutes from "./routes/claims.js"
+import https from "https" //For self-ping functionality
 
 dotenv.config()
 
@@ -39,3 +40,11 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
+
+setInterval(() => {
+  https.get("https://leaderboard-task-s4dj.onrender.com", (res) => {
+    console.log(`[Self-ping] ${new Date().toISOString()} - Status: ${res.statusCode}`)
+  }).on("error", (err) => {
+    console.error(`[Self-ping error] ${new Date().toISOString()} - ${err.message}`)
+  })
+}, 5 * 60 * 1000) 
