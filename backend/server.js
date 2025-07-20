@@ -42,7 +42,7 @@ app.listen(PORT, () => {
 })
 
 setInterval(() => {
-  https.get("https://leaderboard-task-s4dj.onrender.com", (res) => {
+  https.get("https://leaderboard-task-s4dj.onrender.com/", (res) => {
     console.log(`[Self-ping] ${new Date().toISOString()} - Status: ${res.statusCode}`)
   }).on("error", (err) => {
     console.error(`[Self-ping error] ${new Date().toISOString()} - ${err.message}`)
