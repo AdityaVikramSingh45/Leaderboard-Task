@@ -12,7 +12,7 @@ const app = express()
 const PORT = process.env.PORT || 2000
 
 // Middleware
-const allowedOrigins = ["http://localhost:3000", "https://your-frontend-domain.com"]
+const allowedOrigins = ["http://localhost:3000", "https://leaderboard-task-vh49.vercel.app"]
 
 app.use(cors({
   origin: allowedOrigins,
