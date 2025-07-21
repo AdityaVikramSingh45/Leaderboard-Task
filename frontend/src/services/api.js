@@ -1,13 +1,12 @@
 import { useEffect } from "react"
 
-const API_BASE_URL = "https://leaderboard-task-s4dj.onrender.com/api"
+// const API_BASE_URL = "https://leaderboard-task-s4dj.onrender.com/api"
+const API_BASE_URL = "http://localhost:2000/api"
 
-// useEffect(()=>{
-//   console.log("API Base URL:", API_BASE_URL)
-// })
 
 export const getUsers = async () => {
   const response = await fetch(`${API_BASE_URL}/users`)
+  console.log("API Base URL:", API_BASE_URL)
   if (!response.ok) {
     throw new Error("Failed to fetch users")
   }
